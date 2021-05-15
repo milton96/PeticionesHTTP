@@ -2,11 +2,16 @@ package main.models;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import main.Respuesta;
+import main.helpers.Global;
+import main.requests.EstatusCode;
+import main.requests.Peticion;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class User {
+    private static final String URL = Global.BASE_URL + "users/";
     private float id;
     private String name;
     private String username;
@@ -78,6 +83,29 @@ public class User {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public static void ListaUsuarios() {
+        System.out.println("Lista de usuarios");
+        Peticion peticion = new Peticion(URL, Peticion.GET);
+        Respuesta respuesta = peticion.HacerPeticion();
+        if (respuesta.EstatusCode == EstatusCode.OK.Estatus) {
+            ArrayList<User> users = User.JsonToArrayList(respuesta.Json);
+            for (User user: users) {
+                System.out.println(user.toString());
+            }
+        }
+    }
+
+    public static void ObtenerUsuarioPorId(int id) {
+        System.out.println("Obtener un solo usuario");
+        String url = URL + id;
+        Peticion peticion = new Peticion(url, Peticion.GET);
+        Respuesta respuesta = peticion.HacerPeticion();
+        if (respuesta.EstatusCode == EstatusCode.OK.Estatus){
+            User user = User.JsonToUser(respuesta.Json);
+            System.out.println(user.toString());
+        }
     }
 
     public static ArrayList<User> JsonToArrayList(String json) {
