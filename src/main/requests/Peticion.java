@@ -22,7 +22,7 @@ public class Peticion<T> {
 
     private static String Url;
     private static String Metodo;
-    private static String ContentType = FormUrlEncoded;
+    private static String ContentType = JSON;
     private static Object Body = null;
 
     public Peticion(String url, String metodo, String contentType, Object body) {
