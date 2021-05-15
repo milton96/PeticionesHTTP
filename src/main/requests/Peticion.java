@@ -1,17 +1,14 @@
 package main.requests;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import main.Respuesta;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Locale;
 
-public class Peticion<T> {
+public class Peticion {
     public static final String GET  = "GET";
     public static final String POST  = "POST";
     public static final String PUT  = "PUT";
