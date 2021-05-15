@@ -1,5 +1,11 @@
 package main.models;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
 public class User {
     private float id;
     private String name;
@@ -72,6 +78,18 @@ public class User {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    public static ArrayList<User> JsonToArrayList(String json) {
+        Gson gson = new Gson();
+        Type dataType = new TypeToken<ArrayList<User>>(){}.getType();
+        return gson.fromJson(json, dataType);
+    }
+
+    public static User JsonToUser(String json) {
+        Gson gson = new Gson();
+        Type dataType = new TypeToken<User>(){}.getType();
+        return gson.fromJson(json, dataType);
     }
 }
 
