@@ -1,7 +1,7 @@
 package main;
 
-public class Respuesta<T> {
+public class Respuesta {
     public int EstatusCode;
-    public T Datos;
+    public String Json;
     public String Mensaje;
 }
