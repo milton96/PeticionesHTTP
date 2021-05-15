@@ -21,4 +21,12 @@ public class Geo {
         //this.lng = Float.parseFloat(lng);
         this.lng = lng;
     }
+
+    @Override
+    public String toString() {
+        return "Geo{" +
+                "lat='" + lat + '\'' +
+                ", lng='" + lng + '\'' +
+                '}';
+    }
 }

@@ -91,5 +91,18 @@ public class User {
         Type dataType = new TypeToken<User>(){}.getType();
         return gson.fromJson(json, dataType);
     }
-}
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", address=" + address.toString() +
+                ", phone='" + phone + '\'' +
+                ", website='" + website + '\'' +
+                ", company=" + company.toString() +
+                '}';
+    }
+}

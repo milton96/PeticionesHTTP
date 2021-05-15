@@ -17,9 +17,7 @@ public class Main {
         if (respuesta_usuarios.EstatusCode == EstatusCode.OK.Estatus) {
             ArrayList<User> users = User.JsonToArrayList(respuesta_usuarios.Json);
             for (User user: users) {
-                System.out.println(user.getId());
-                System.out.println(user.getName());
-                System.out.println(user.getUsername());
+                System.out.println(user.toString());
             }
         }
     }

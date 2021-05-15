@@ -28,4 +28,13 @@ public class Company {
     public String getBs() {
         return bs;
     }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                ", catchPhrase='" + catchPhrase + '\'' +
+                ", bs='" + bs + '\'' +
+                '}';
+    }
 }
