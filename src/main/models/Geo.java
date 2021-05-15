@@ -1,22 +1,24 @@
 package main.models;
 
 public class Geo {
-    public float lat;
-    public float lng;
+    public String lat;
+    public String lng;
 
-    public float getLat() {
+    public String getLat() {
         return lat;
     }
 
-    public float getLng() {
+    public String getLng() {
         return lng;
     }
 
     public void setLat(String lat) {
-        this.lat = Float.parseFloat(lat);
+        //this.lat = Float.parseFloat(lat);
+        this.lat = lat;
     }
 
     public void setLng(String lng) {
-        this.lng = Float.parseFloat(lng);
+        //this.lng = Float.parseFloat(lng);
+        this.lng = lng;
     }
 }
